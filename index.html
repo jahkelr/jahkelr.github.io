@@ -1,80 +1,98 @@
-<!DOCTYPE html>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="tomos-style.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Jahkel Robin</h1>
-            <p>AI/ML Engineer · Founder, TOMOS LLC</p>
-        </div>
-    </header>
-    
-    <main>
-        <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>I build reliable, production-grade machine learning systems and LLM applications. As founder of <a href="https://jahkelr.github.io/tomos/" class="link-more">TOMOS</a>, I help organizations automate workflows, analyze unstructured data, and deploy cost-effective AI services—covering solution design, data pipelines, evaluation, and MLOps.</p>
-            </div>
-        </section>
+h1, h2, h3 {
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+}
 
-        <section id="projects">
-            <div class="container">
-                <h2>Selected Work & Tools</h2>
-                <ul class="services-list">
-                  <li>
-                    <h3>TOMOS AI Consulting</h3>
-                    <p>Advisory and hands-on engineering for LLM/RAG systems, data extraction, evaluation frameworks, and production deployment. Engagements emphasize measurable outcomes, security, and maintainability.</p>
-                    <a class="link-more" href="https://jahkelr.github.io/tomos/">Learn more</a>
-                  </li>
-                  <li>
-                    <h3>Grant Finder & Recommender (SaaS)</h3>
-                    <p>Prototype service for small nonprofits that ranks grant opportunities by fit using retrieval + lightweight scoring. Includes admin tooling for curation and outreach workflows.</p>
-                    <a class="link-more" href="#">View project</a>
-                  </li>
-                  <li>
-                    <h3>Resume Screening Microservice</h3>
-                    <p>FastAPI service that parses PDFs (PyMuPDF), extracts structured features, and applies configurable scoring/LLM notes for faster candidate triage. Designed for private deployment.</p>
-                    <a class="link-more" href="#">View project</a>
-                  </li>
-                  <li>
-                    <h3>Clinical NLP Summarizer</h3>
-                    <p>LLM-powered summarization and normalization of long-form clinical/operational text with guardrails and objective evaluation (hallucination checks, rubric-based scoring).</p>
-                    <a class="link-more" href="#">View project</a>
-                  </li>
-                </ul>
-            </div>
-        </section>
+main section {
+  padding: 2rem 0;
+}
 
-        <section id="contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <p>Interested in partnering with TOMOS or discussing an ML engagement? Send a note and I’ll follow up.</p>
-                <form action="https://formspree.io/f/{your-form-id}" method="POST">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+header .container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+header h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
 
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-                    <button type="submit">Send</button>
-                </form>
-            </div>
-        </section>
-    </main>
+.services-list li {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Jahkel Robin. All Rights Reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+.link-more {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-more:hover {
+  text-decoration: underline;
+}
+
+.link-more:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+a { color: inherit; }
+
+input, textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: 0;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 480px) {
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
